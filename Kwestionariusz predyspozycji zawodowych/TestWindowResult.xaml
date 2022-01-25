@@ -1,0 +1,229 @@
+﻿<Window x:Class="Kwestionariusz_predyspozycji_zawodowych.TestWindowResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kwestionariusz_predyspozycji_zawodowych"
+        mc:Ignorable="d"
+        Title="Kwestionariusz predyspozycji zawodowych" ResizeMode="NoResize" Height="657.237" Width="1055.742" ContentRendered="Window_ContentRendered" Icon="Icon.png" Closing="Window_Closing">
+    <Grid>
+        <TextBlock x:Name="stageLabel" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Wynik" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="20"  Width="70" Margin="484,10,483,0"/>
+        <Grid HorizontalAlignment="Left" Height="240" Margin="524,98,0,0" VerticalAlignment="Top" Width="503">
+            <Grid.Resources>
+                <Style x:Key="lineStyle" TargetType="{x:Type Line}">
+                    <Setter Property="Stroke" Value="Gray" />
+                    <Setter Property="Stretch" Value="Fill" />
+                    <Setter Property="Panel.ZIndex" Value="100" />
+                    <Setter Property="StrokeDashArray" Value="1,2" />
+                </Style>
+
+                <Style x:Key="horizontalLineStyle" TargetType="{x:Type Line}" BasedOn="{StaticResource lineStyle}">
+                    <Setter Property="X2" Value="1" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Grid.ColumnSpan" 
+                        Value="{Binding ColumnDefinitions.Count, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
+                </Style>
+
+                <Style x:Key="verticalLineStyle" TargetType="{x:Type Line}" BasedOn="{StaticResource lineStyle}">
+                    <Setter Property="Y2" Value="1" />
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="Grid.RowSpan"   
+                        Value="{Binding RowDefinitions.Count, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
+            <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="2" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="3" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="4" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="5" Style="{StaticResource horizontalLineStyle}"/>
+            <TextBlock x:Name="resultGridTitleTextBlock" Text="Najbardziej odpowiadające tobie typy według testu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock x:Name="type1r" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock x:Name="type2r" Text="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock x:Name="type3r" Text="3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+            <TextBlock x:Name="type4r" Text="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+            <TextBlock x:Name="type5r" Text="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+            <TextBlock x:Name="type6r" Text="6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+            <TextBlock x:Name="resultType1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+            <TextBlock x:Name="resultType2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2"/>
+            <TextBlock x:Name="resultType3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3"/>
+            <TextBlock x:Name="resultType4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4"/>
+            <TextBlock x:Name="resultType5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5"/>
+            <TextBlock x:Name="resultType6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="240" Margin="10,98,0,0" VerticalAlignment="Top" Width="503">
+            <Grid.Resources>
+                <Style x:Key="lineStyle" TargetType="{x:Type Line}">
+                    <Setter Property="Stroke" Value="Gray" />
+                    <Setter Property="Stretch" Value="Fill" />
+                    <Setter Property="Panel.ZIndex" Value="100" />
+                    <Setter Property="StrokeDashArray" Value="1,2" />
+                </Style>
+
+                <Style x:Key="horizontalLineStyle" TargetType="{x:Type Line}" BasedOn="{StaticResource lineStyle}">
+                    <Setter Property="X2" Value="1" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Grid.ColumnSpan" 
+                        Value="{Binding ColumnDefinitions.Count, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
+                </Style>
+
+                <Style x:Key="verticalLineStyle" TargetType="{x:Type Line}" BasedOn="{StaticResource lineStyle}">
+                    <Setter Property="Y2" Value="1" />
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="Grid.RowSpan"   
+                        Value="{Binding RowDefinitions.Count, RelativeSource={RelativeSource AncestorType={x:Type Grid}}}"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Line Grid.Column="0" Style="{StaticResource verticalLineStyle}"/>
+            <Line Grid.Column="1" Style="{StaticResource verticalLineStyle}"/>
+            <Line Grid.Column="2" Style="{StaticResource verticalLineStyle}"/>
+            <Line Grid.Column="3" Style="{StaticResource verticalLineStyle}"/>
+            <Line Grid.Row="0" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="1" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="2" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="3" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="4" Style="{StaticResource horizontalLineStyle}"/>
+            <Line Grid.Row="5" Style="{StaticResource horizontalLineStyle}"/>
+            <TextBlock x:Name="absolutelyYes" Text="Absolutnie tak" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock x:Name="ratherYes" Text="Raczej tak" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0"/>
+            <TextBlock x:Name="absolutelyNo" Text="Absolutnie nie" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
+            <TextBlock x:Name="iDontKnow" Text="Nie wiem" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+            <TextBlock x:Name="type1" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock x:Name="type2" Text="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock x:Name="type3" Text="3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+            <TextBlock x:Name="type4" Text="4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+            <TextBlock x:Name="type5" Text="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+            <TextBlock x:Name="type6" Text="6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+            <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow4" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <RadioButton x:Name="absolutelyYes6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <RadioButton x:Name="ratherYes6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <RadioButton x:Name="absolutelyNo6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <RadioButton x:Name="iDontKnow6" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            </Grid>
+        </Grid>
+        <TextBlock x:Name="beforeTextBlock" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Twój wybór" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="20"  Width="115" Margin="221,53,701,0"/>
+        <TextBlock x:Name="afterTextBlock" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Wynik testu" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="20"  Width="120" Margin="742,53,175,0"/>
+        <TextBlock x:Name="typeDescriptionTextBox" HorizontalAlignment="Left" Margin="10,343,0,-48" TextWrapping="Wrap" VerticalAlignment="Top" Width="1017"><Run FontWeight="Bold"
+                Text="Typ realistyczny 1. "/><Run Text=" "/><Run Text="Jesteś praktyczny. Preferujesz pracę przynoszącą konkretne, odczuwalne dla siebie i innych rezultaty. Nie przeszkadza Ci praca fizyczna. Interesuje Cię praca z techniką, wymagająca wysiłku umysłowego, dobrze rozwiniętych zdolności ruchowych."/><LineBreak/><Run FontWeight="Bold" Text="Typ intelektualny 2. "/><Run Text=" "/><Run Text="Jesteś bardziej teoretykiem niż praktykiem. Podoba Ci się nauka i studiowanie, badanie jakiejś dziedziny, dostarczenie nowej wiedzy. Preferujesz pracę przynoszącą radość poznania, a czasami odkrycia, wymagającą wysiłku umysłowego, zdolności do usystematyzowanej informacji, szerokiego horyzontu."/><LineBreak/><Run FontWeight="Bold" Text="Typ społeczny 3. "/><Run Text=" "/><Run Text="Jesteś komunikatywny, lubisz pracować z ludźmi i dla ludzi, dlatego interesuje Cię nauka, wychowanie, obsługa klienta, okazywanie pomocy potrzebującym, itp. Lubisz sprawy wypełnione emocjami, pracę żywą, wymagającą kontaktu z ludźmi oraz pełnej komunikacji."/><LineBreak/><Run FontWeight="Bold" Text="Typ konwencjonalny 4. "/><Run Text=" "/><Run Text="Lubisz pracować z dokumentami, tekstami, cyframi oraz wykorzystywać narzędzia i przyrządy komputerowe. Praca spokojna, bez ryzyka, z wąskim zakresem obowiązków. Może być związana z obróbką informacji, z obliczeniami, wyliczeniami, wymagająca dokładności, staranności, wytrwałości. Chciałbyś uciec od kontaktów i rozmów, odpowiedzialności zarządzania innymi oraz odpowiedzialności za rezultaty ich pracy."/><LineBreak/><Run FontWeight="Bold" Text="Typ przedsiębiorczy 5. "/><Run Text=" "/><Run Text="Jesteś organizatorem zorientowanym na pracę niewymagającą wiedzy twórczej. Preferujesz pracę dającą pełną swobodę, samodzielność, bezpieczną w uwarunkowaniach społecznych, wyżej stojącą w hierarchii od innych, dającą materialne zabezpieczenie; pracę pełną pomysłów, z ryzykiem, wymagającą inicjatywy, przedsiębiorczości, brania odpowiedzialności na siebie."/><LineBreak/><Run FontWeight="Bold" Text="Typ artystyczny 6. "/><Run Text=" "/><Run Text="Masz naturę artysty. Lubisz rodzaje działań dające możliwość swobodnego wyrażania własnego wnętrza, bez przymusu i ram czasowych, formalności; pracę dającą upływ fantazji, wyobraźni, wymagającą estetycznego smaku, specjalnych zdolności (artystycznych, literackich, muzycznych)."/></TextBlock>
+        <Button x:Name="exitButton" Content="Zakończ" HorizontalAlignment="Left" Margin="777,572,0,0" VerticalAlignment="Top" Width="250" Height="35" Click="exitButton_Click"/>
+        <Button x:Name="printButton" Content="Wydrukuj" HorizontalAlignment="Left" Margin="265,572,0,0" VerticalAlignment="Top" Width="250" Height="35" Click="printButton_Click"/>
+        <Button x:Name="saveButton" Content="Zapisz" HorizontalAlignment="Left" Margin="10,572,0,0" VerticalAlignment="Top" Width="250" Height="35" Click="saveButton_Click"/>
+        <Button x:Name="backButton" Content="Wstecz" HorizontalAlignment="Left" Margin="520,572,0,0" VerticalAlignment="Top" Width="250" Height="35" Click="backButton_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Kwestionariusz_predyspozycji_zawodowych.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kwestionariusz_predyspozycji_zawodowych"
+        mc:Ignorable="d"
+        Title="Kwestionariusz predyspozycji zawodowych" Height="294.836" Width="443.233" ResizeMode="NoResize" Icon="Icon.png" Closing="Window_Closing">
+    <Grid>
+        <TextBlock x:Name="titleTextBlock" Text="Kwestionariusz predyspozycji zawodowych" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Center" Width="409"/>
+        <TextBlock x:Name="copyrightTextBlock" Text="© 2017 by Paweł Kapela." HorizontalAlignment="Left" Margin="146,232,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="creditsTextBlock" HorizontalAlignment="Left" Margin="10,195,0,0" TextWrapping="Wrap" Text="W tym programie wykorzystano bibliotekę GemBox.Document oraz ikonę z serwisu FlatIcon." VerticalAlignment="Top" Width="409" TextAlignment="Center"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="164,95,0,0" VerticalAlignment="Top" Width="100" Source="Icon.png"/>
+
+    </Grid>
+</Window>

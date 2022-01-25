@@ -1,0 +1,25 @@
+﻿<Window x:Class="Kwestionariusz_predyspozycji_zawodowych.TestWindowTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Kwestionariusz predyspozycji zawodowych" ResizeMode="NoResize" Height="310.501" Width="397.02" Icon="Icon.png" Closing="Window_Closing" ContentRendered="Window_ContentRendered">
+    <Grid>
+        <Button x:Name="leftButton" Content="Lewa" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="179" Height="50" Click="leftButton_Click"/>
+        <Button x:Name="rightButton" Content="Prawa" HorizontalAlignment="Left" Margin="196,157,0,0" VerticalAlignment="Top" Width="179" Height="50" RenderTransformOrigin="-0.585,1.689" Click="rightButton_Click"/>
+        <TextBlock x:Name="instructionTextBlock" HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top"><Run Text="Zakładamy, że po zdobyciu odpowiedniej wiedzy możesz wykonywać określoną pracę. Z przedstawio"/><Run Text="nej niżej pary zawodów należy wybrać jedną, która najbardziej ci odpowiada (jest bardziej zbieżna z twoimi zainteresowaniami i możliwościami). Kliknij nazwę zawodu, który najbardziej ci odpowiada. Jeśli treść zawodu (zadania zawodowe) nie jest całkiem dla ciebie zrozumiała, sprawdź ją rozwijając definicję "/><Run Text="poniżej przycisków."/></TextBlock>
+        <Expander x:Name="definitionsExpander" Header="Treści zawodów" HorizontalAlignment="Left" Height="350" Margin="10,244,0,-300" VerticalAlignment="Top" Width="363" IsExpanded="False" Expanded="definitionsExpander_Expanded" Collapsed="definitionsExpander_Collapsed">
+            <Border BorderThickness="1" CornerRadius="4" Padding="5" Margin="0,3,0,0" BorderBrush="LightGray">
+                <Grid>
+                    <TextBlock x:Name="definitionLeftTextBlock" Margin="3,1,180,1" Text="Lewa" TextWrapping="Wrap"/>
+                    <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="LightGray" />
+                    <TextBlock x:Name="definitionRightTextBlock" Margin="0,1,3,1" HorizontalAlignment="Right" Text="Prawa" Width="165" TextWrapping="Wrap"/>
+                </Grid>
+            </Border>
+        </Expander>
+        <TextBlock x:Name="stageLabel" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Etap drugi" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="20"  Width="107" Margin="139,8,145,0"/>
+        <Button x:Name="backButton" Content="Wstecz" Margin="10,212,0,0" Click="backButton_Click" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="365"/>
+
+    </Grid>
+</Window>

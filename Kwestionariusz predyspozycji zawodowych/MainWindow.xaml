@@ -1,0 +1,25 @@
+﻿<Window x:Class="Kwestionariusz_predyspozycji_zawodowych.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kwestionariusz_predyspozycji_zawodowych"
+        mc:Ignorable="d"
+        Title="Kwestionariusz predyspozycji zawodowych" ResizeMode="NoResize" Height="354.166" Width="445.967" Icon="Icon.png" Closing="Window_Closing">
+    <Grid>
+        <TextBlock x:Name="titleTextBlock" Text="Kwestionariusz predyspozycji zawodowych" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="DemiBold" FontSize="30" TextWrapping="Wrap" TextAlignment="Center" Width="409"/>
+        <Label x:Name="nameLabel" Content="Imię i nazwisko:" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="128,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291"/>
+        <ComboBox x:Name="genderComboBox" HorizontalAlignment="Left" Margin="128,151,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Mężczyzna</ComboBoxItem>
+            <ComboBoxItem>Kobieta</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Nieokreślona</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="genderLabel" Content="Płeć:" HorizontalAlignment="Left" Margin="82,147,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.634,2.7"/>
+        <Label x:Name="ageLabel" Content="Wiek:" HorizontalAlignment="Left" Margin="77,120,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <TextBox x:Name="ageTextBox" HorizontalAlignment="Left" Height="23" Margin="128,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="startButton" Content="Rozpocznij test" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="409" Height="59" FontSize="20" Click="startButton_Click"/>
+        <Button x:Name="aboutButton" Content="O programie" HorizontalAlignment="Left" Margin="10,246,0,0" VerticalAlignment="Top" Width="409" Height="59" FontSize="20" Click="aboutButton_Click"/>
+
+    </Grid>
+</Window>
